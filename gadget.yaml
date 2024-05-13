@@ -1,25 +1,50 @@
-name: 'TODO: Fill the gadget name'
-description: 'TODO: Fill the gadget description'
+name: trace udns
+description: use uprobe to trace dns requests in libc.so
+homepageURL: https://github.com/alban/trace-udns
+documentationURL: https://github.com/alban/trace-udns
+sourceURL: https://github.com/alban/trace-udns
 tracers:
-  changeme_mytracer:
+  udns:
     mapName: events
     structName: event
 structs:
   event:
     fields:
-    - name: timestamp
-      description: Timestamp
-      attributes:
-        template: timestamp
     - name: pid
-      description: Process ID
       attributes:
         template: pid
     - name: comm
-      description: Process name
+      description: command
       attributes:
         template: comm
+    - name: operation
+      description: memory operation type
+      attributes:
+        width: 16
+        alignment: left
+        ellipsis: end
     - name: mntns_id
-      description: Mount namespace ID
+      description: Mount namespace inode id
       attributes:
         template: ns
+    - name: tid
+      attributes:
+        template: pid
+    - name: name
+      description: DNS name being resolved (node argument of getaddrinfo)
+      attributes:
+        width: 16
+        alignment: left
+        ellipsis: end
+    - name: service
+      description: service argument of getaddrinfo
+      attributes:
+        width: 16
+        alignment: left
+        ellipsis: end
+    - name: endpoint
+      description: IP given by the DNS server
+      attributes:
+        width: 16
+        alignment: left
+        ellipsis: end
