@@ -1,0 +1,8 @@
+# Artifact Hub repository metadata file
+# https://github.com/artifacthub/hub/blob/master/docs/metadata/artifacthub-repo.yml
+
+repositoryID: 72a00c05-ba6e-4742-bd08-30082820565a
+owners:
+  - name: Alban Crequy
+    email: alban.crequy@gmail.com
+

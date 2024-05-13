@@ -1,0 +1,29 @@
+# Artifact Hub package metadata file
+version: 0.1.0
+name: "trace-udns"
+category: monitoring-logging
+displayName: "trace-udns"
+createdAt: "2024-05-07T14:41:00+01:00"
+description: "Trace DNS requests with uprobes"
+logoURL: "https://inspektor-gadget.io/media/brand-icon.svg"
+license: ""
+homeURL: "https://github.com/alban/trace-udns"
+containersImages:
+    - name: gadget
+      image: "ghcr.io/alban/trace-udns:latest"
+      platforms:
+        - linux/amd64
+        - linux/arm64
+keywords:
+    - gadget
+links:
+    - name: source
+      url: "https://github.com/alban/trace-udns"
+install: |
+    # Run
+    ```bash
+    sudo IG_EXPERIMENTAL=true ig run ghcr.io/alban/trace-udns:latest
+    ```
+provider:
+    name: Inspektor Gadget
+
